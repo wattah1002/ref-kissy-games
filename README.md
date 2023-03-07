@@ -82,7 +82,7 @@ Your device is now connected.
 cd /Users/hikari/Desktop
 ```
 
-のように書いて、エンターを押す（「cd」が開くという命令文）
+のように書いて、エンターを押す（「cd」が開くという命令文で、その後に半角スペースがあって、その後にはりつける）
 
 ```
 git clone https://github.com/wattah1002/ref-kissy-games.git
@@ -91,3 +91,27 @@ git clone https://github.com/wattah1002/ref-kissy-games.git
 を書いて、エンターを押す
 
 すると、PC内のフォルダにデータがダウンロードされる
+ 
+  
+  
+   
+## 5.作ったファイルをアップロードする
+
+「ref-kissy-games」のフォルダを右クリックして、コピーを押す
+
+ターミナルで、
+```
+cd /Users/hikari/Desktop
+```
+
+のように書いて、エンターを押す（「cd」が開くという命令文で、その後に半角スペースがあって、その後にはりつける）
+
+
+その後、１行ずつ入力する
+
+```
+git checkout shiba-game
+git add .
+git commit -m “（何を編集したかをここにメモとして書く）”
+git push
+```
