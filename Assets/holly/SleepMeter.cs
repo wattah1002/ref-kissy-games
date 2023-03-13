@@ -25,6 +25,7 @@ public class SleepMeter : MonoBehaviour
         setSlider.value = SleepingBarometer;
     }
     
+    //少しずつ深い眠りに落ちていく
     IEnumerator Nemukunaru(){
         yield return new WaitForSeconds(1);
         SleepingBarometer ++;

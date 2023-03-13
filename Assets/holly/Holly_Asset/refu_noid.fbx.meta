@@ -1,0 +1,434 @@
+fileFormatVersion: 2
+guid: f997ac85537c54c00ba87ce264852bb4
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 4336723845255883404
+    second: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|idle"
+  - first:
+      74: 3413734236415370738
+    second: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|wake1"
+  - first:
+      74: 6764481982213137595
+    second: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|wake2"
+  - first:
+      74: -5840510817715317863
+    second: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|wake3"
+  - first:
+      74: 8631880673601113242
+    second: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|wake4"
+  - first:
+      74: -6301768783773751701
+    second: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|wake5"
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|idle"
+      takeName: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|idle"
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|wake1"
+      takeName: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|wake1"
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|wake2"
+      takeName: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|wake2"
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 115
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|wake3"
+      takeName: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|wake3"
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 77
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|wake4"
+      takeName: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|wake4"
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 53
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|wake5"
+      takeName: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|wake5"
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 143
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: refu_noid(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cube
+      parentName: refu_noid(Clone)
+      position: {x: -0.00001274301, y: 0.03375578, z: -0.00048408355}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 19.520758, y: 19.520758, z: 19.520758}
+    - name: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2"
+      parentName: refu_noid(Clone)
+      position: {x: 0, y: 0.030807277, z: 0.015288633}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 35.45774, y: 35.45774, z: 35.45774}
+    - name: Bone
+      parentName: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2"
+      position: {x: -0, y: 0.00044113744, z: -0.0002954779}
+      rotation: {x: 0.773239, y: -0.00000007559233, z: -0.00000009217724, w: 0.6341147}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000007}
+    - name: sebone
+      parentName: Bone
+      position: {x: -5.6843417e-18, y: 0.00010197374, z: -1.1920929e-11}
+      rotation: {x: -0.13302618, y: -7.460699e-14, z: 0.000000031715892, w: 0.99111253}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999996}
+    - name: kubi
+      parentName: sebone
+      position: {x: 9.784029e-18, y: 0.00017697974, z: -1.1920929e-11}
+      rotation: {x: 0.034879494, y: 0.00000011913677, z: -0.0000000041579526, w: 0.99939156}
+      scale: {x: 0.99999994, y: 0.99999976, z: 1.0000001}
+    - name: atama
+      parentName: kubi
+      position: {x: -4.2351646e-26, y: 0.000047759375, z: 1.1920929e-11}
+      rotation: {x: 0.1252282, y: -0.00000023654172, z: -0.0000000298567, w: 0.99212795}
+      scale: {x: 1.0000001, y: 0.9999998, z: 1.0000001}
+    - name: atama_end
+      parentName: atama
+      position: {x: -0, y: 0.000109903776, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: kata_L
+      parentName: sebone
+      position: {x: 9.784029e-18, y: 0.00017697974, z: -1.1920929e-11}
+      rotation: {x: 0.03116481, y: -0.016048715, z: 0.7247997, w: 0.6880673}
+      scale: {x: 0.99999976, y: 1.0000001, z: 1.0000001}
+    - name: ninoude_L
+      parentName: kata_L
+      position: {x: 4.582107e-11, y: 0.00010485904, z: -1.8626451e-13}
+      rotation: {x: -0.0042572506, y: 0.045027886, z: -0.009605899, w: 0.9989305}
+      scale: {x: 1.0000007, y: 1.0000005, z: 1.0000001}
+    - name: itinoude_L
+      parentName: ninoude_L
+      position: {x: -2.9802322e-12, y: 0.000128656, z: 2.9802322e-12}
+      rotation: {x: -0.03830377, y: 0.009408149, z: -0.028897945, w: 0.9988039}
+      scale: {x: 1.0000008, y: 1.0000007, z: 0.99999976}
+    - name: te_L
+      parentName: itinoude_L
+      position: {x: 2.9802322e-12, y: 0.000119389755, z: -5.9604634e-11}
+      rotation: {x: 0.000000007450581, y: 0.000000107102096, z: 0.014307474, w: 0.9998977}
+      scale: {x: 0.9999992, y: 0.9999998, z: 1.0000005}
+    - name: te_L_end
+      parentName: te_L
+      position: {x: -0, y: 0.000074757765, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: kata_R
+      parentName: sebone
+      position: {x: 9.784029e-18, y: 0.00017697974, z: -1.1920929e-11}
+      rotation: {x: 0.02421623, y: 0.025102803, z: -0.71926075, w: 0.69386417}
+      scale: {x: 0.99999994, y: 0.99999976, z: 0.9999998}
+    - name: ninoude_R
+      parentName: kata_R
+      position: {x: 2.2351739e-11, y: 0.000087808956, z: -2.057283e-11}
+      rotation: {x: -0.0015310643, y: 0.04771572, z: 0.0004948899, w: -0.99885964}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000004}
+    - name: itinoude_R
+      parentName: ninoude_R
+      position: {x: -5.9604643e-12, y: 0.00013967796, z: 2.3841857e-11}
+      rotation: {x: -0.040885493, y: -0.003415335, z: 0.012228617, w: 0.99908316}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: te_R
+      parentName: itinoude_R
+      position: {x: -1.4901158e-11, y: 0.00011938986, z: 0}
+      rotation: {x: 0.00000007450579, y: -0.00000013690439, z: -0.014307579, w: 0.99989766}
+      scale: {x: 1.0000006, y: 1.0000008, z: 1}
+    - name: te_R_end
+      parentName: te_R
+      position: {x: -0, y: 0.000074757765, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: osiri_L
+      parentName: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2"
+      position: {x: 2.3841857e-11, y: 0.00044113738, z: -0.0002954779}
+      rotation: {x: -0.24705917, y: -0.21728523, z: 0.709098, w: 0.62364167}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000001}
+    - name: momo_L
+      parentName: osiri_L
+      position: {x: 2.272427e-11, y: 0.00007797227, z: -2.6822086e-11}
+      rotation: {x: 0.41936722, y: -0.013521747, z: 0.08685707, w: -0.90355086}
+      scale: {x: 1.0000002, y: 1.0000006, z: 1.0000005}
+    - name: sune_L
+      parentName: momo_L
+      position: {x: -2.1769665e-12, y: 0.00021366999, z: -3.1664966e-12}
+      rotation: {x: 0.020081729, y: 0.0016043615, z: -0.0012472142, w: 0.9997963}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000005}
+    - name: asi_L
+      parentName: sune_L
+      position: {x: 2.6728954e-11, y: 0.00025301927, z: -1.8626448e-12}
+      rotation: {x: 0.0064657917, y: 0.0064966995, z: -0.64344823, w: -0.76543474}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.99999994}
+    - name: asi_L_end
+      parentName: asi_L
+      position: {x: -0, y: 0.00009248128, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: osiri_R
+      parentName: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2"
+      position: {x: -2.3841857e-11, y: 0.00044113738, z: -0.0002954779}
+      rotation: {x: 0.24705917, y: -0.21728523, z: 0.709098, w: -0.62364167}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000001}
+    - name: momo_R
+      parentName: osiri_R
+      position: {x: -2.272427e-11, y: 0.00007797227, z: -2.6822086e-11}
+      rotation: {x: -0.41936722, y: -0.013521747, z: 0.08685707, w: 0.90355086}
+      scale: {x: 1.0000002, y: 1.0000006, z: 1.0000005}
+    - name: sune_R
+      parentName: momo_R
+      position: {x: 2.1769665e-12, y: 0.00021366999, z: -3.1664966e-12}
+      rotation: {x: 0.020081729, y: -0.0016043615, z: 0.0012472142, w: 0.9997963}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000005}
+    - name: asi_R
+      parentName: sune_R
+      position: {x: -2.6728954e-11, y: 0.00025301927, z: -1.8626448e-12}
+      rotation: {x: -0.0064657917, y: 0.0064966995, z: -0.64344823, w: 0.76543474}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.99999994}
+    - name: asi_R_end
+      parentName: asi_R
+      position: {x: -0, y: 0.00009248128, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.01
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
