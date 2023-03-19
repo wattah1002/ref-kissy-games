@@ -33,10 +33,6 @@ public class SpawnOyashirazu : MonoBehaviour
             Spawn();
             timeCount = 0;
         }
-        Debug.Log("timeCount:" + timeCount);
-        Debug.Log("gameSpeed:" + gameSpeed);
-        Debug.Log("bool:" + (timeCount >= gameSpeed));
-        Debug.Log("---------");
     }
 
     void Spawn()
