@@ -9,10 +9,11 @@ public class PlayerController_hiroppe : MonoBehaviour
 
     private float move;
     [SerializeField]
-    private float moveSence = 1.0f;
+    private float moveSence = 1f;
     private float jumpSpeed = 500f;
-    [SerializeField]
+
     private bool isGround = true;
+    private bool isSide = false;
     
     public GameObject _camera;
     private float[] leftSide = {-230,250};
@@ -38,12 +39,12 @@ public class PlayerController_hiroppe : MonoBehaviour
         //左右移動
         move = Input.GetAxis("Horizontal");
         if(transform.position.x > leftSide[fieldNum] && transform.position.x < 720){
-            if(move != 0 && moveFlag){
-                if(move >= 0) move =1;
-                else move = -1;
+            if(move != 0 && moveFlag && !isSide){
+                //if(move >= 0) move =1;
+                //else move = -1;
 
                 anim.SetBool("isWalk", true);
-                transform.localScale = new Vector3(move * 17, 17, 1);
+                transform.localScale = new Vector3(Mathf.Sign(move) * 17, 17, 1);
                 transform.position += new Vector3(move * moveSence, 0,0);
             }
             else {
@@ -81,6 +82,14 @@ public class PlayerController_hiroppe : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.tag == "Field"){
             isGround = true;
+        }
+        if(col.gameObject.tag == "FieldSide"){
+            isSide = true;
+        }
+    }
+    void OnCollisionExit2D(Collision2D col){
+        if(col.gameObject.tag == "FieldSide"){
+            isSide = false;
         }
     }
 }
