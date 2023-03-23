@@ -26,12 +26,20 @@ public class Hakai : MonoBehaviour
         {
             r.isKinematic = false;
             r.transform.SetParent(null);
+<<<<<<< HEAD
             // Destroy(r, 2.0f);
+=======
+            r.gameObject.AddComponent<DestroyScrap>();
+>>>>>>> db7ad8b50f8a8dce5231bfb4cc29c693f896cc16
             var vect = new Vector3(random.Next(min, max), random.Next(0, max), random.Next(min, max));
             r.AddForce(vect, ForceMode.Impulse);
             r.AddTorque(vect, ForceMode.Impulse);
         });
+<<<<<<< HEAD
         Destroy(gameObject);
+=======
+        Destroy(gameObject, 3.0f);
+>>>>>>> db7ad8b50f8a8dce5231bfb4cc29c693f896cc16
 
     }
 
