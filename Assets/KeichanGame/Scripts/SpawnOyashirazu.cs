@@ -25,6 +25,7 @@ public class SpawnOyashirazu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         Timer t = timer.GetComponent<Timer>();
         gameSpeed = (float)Math.Ceiling(t.remainingTime / t.timeLimit * 4) / 4;
         timeCount += Time.deltaTime;
@@ -41,6 +42,7 @@ public class SpawnOyashirazu : MonoBehaviour
         float degX = (float)Math.Cos((rand * deg) * (Math.PI / 180));
         float degZ = (float)Math.Sin((rand * deg) * (Math.PI / 180));
         Vector3 pos = new Vector3(distance * degX, -1f, distance * degZ);
+
         GameObject haObj = Instantiate(haPre, pos, Quaternion.Euler(0, 90 - (rand * deg), 0));
     }
 }
