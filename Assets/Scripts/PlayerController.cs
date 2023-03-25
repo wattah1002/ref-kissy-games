@@ -45,9 +45,10 @@ public class PlayerController : MonoBehaviour
             walk.SetBool("BlWalk", false);
         }
 
-        if (transform.position.y < -3 & !gameOverJump)
+        if (transform.position.y < -4 & !gameOverJump)
         {
-            gameOverJumpForce = 700;
+            gameOverJumpForce = 400;
+            rb.velocity= Vector3.zero;
             GameOverAction();
         }
 
@@ -81,18 +82,21 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Car")
         {
             gameOverJumpForce = 250;
+            rb.velocity = Vector3.zero;
             GameOverAction();
         }
 
         if (collision.gameObject.tag == "BrokenCar")
         {
             gameOverJumpForce = 350;
+            rb.velocity = Vector3.zero;
             GameOverAction();
         }
 
         if (collision.gameObject.tag == "Dentyuu")
         {
             gameOverJumpForce = 300;
+            rb.velocity = Vector3.zero;
             GameOverAction();
         }
     }
