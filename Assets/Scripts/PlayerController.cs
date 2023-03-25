@@ -73,11 +73,7 @@ public class PlayerController : MonoBehaviour
             ground = true;
         }
 
-        if (collision.gameObject.tag == "FallBlock")
-        {
-            gameOverJumpForce = 300;
-            GameOverAction();
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -91,6 +87,12 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "BrokenCar")
         {
             gameOverJumpForce = 350;
+            GameOverAction();
+        }
+
+        if (collision.gameObject.tag == "Dentyuu")
+        {
+            gameOverJumpForce = 300;
             GameOverAction();
         }
     }

@@ -683,6 +683,7 @@ GameObject:
   m_Component:
   - component: {fileID: 458273503}
   - component: {fileID: 458273504}
+  - component: {fileID: 458273505}
   m_Layer: 0
   m_Name: FallDentyuu2
   m_TagString: Untagged
@@ -722,7 +723,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -3.978571, y: -11.649561}
@@ -738,6 +739,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.96894455, y: 0.69475937}
   m_EdgeRadius: 0
+--- !u!114 &458273505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458273502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec5b4c8a2d5601448c09bbc87b3a05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fall1: 0
+  fallDirection: 3.5
 --- !u!1 &514467657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,6 +1279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 754068277}
   - component: {fileID: 754068278}
+  - component: {fileID: 754068279}
   m_Layer: 0
   m_Name: FallDentyuu1
   m_TagString: Untagged
@@ -1303,7 +1319,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -5.923731, y: -11.703987}
@@ -1319,6 +1335,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.95811844, y: 0.7843933}
   m_EdgeRadius: 0
+--- !u!114 &754068279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754068276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec5b4c8a2d5601448c09bbc87b3a05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fall1: 0
+  fallDirection: 3.5
 --- !u!1 &1006573941
 GameObject:
   m_ObjectHideFlags: 0
@@ -2037,6 +2067,7 @@ GameObject:
   - component: {fileID: 1418207115}
   - component: {fileID: 1418207117}
   - component: {fileID: 1418207116}
+  - component: {fileID: 1418207118}
   m_Layer: 0
   m_Name: RootDentyuu2
   m_TagString: Dentyuu
@@ -2068,7 +2099,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.09500599}
@@ -2135,6 +2166,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1418207118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418207114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b05cf1a5b61b7104f9a1dac07cc197f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block: {fileID: 1418207116}
 --- !u!1 &1437088289
 GameObject:
   m_ObjectHideFlags: 0
@@ -2318,6 +2362,7 @@ GameObject:
   - component: {fileID: 1619952182}
   - component: {fileID: 1619952181}
   - component: {fileID: 1619952183}
+  - component: {fileID: 1619952184}
   m_Layer: 0
   m_Name: Stage
   m_TagString: Ground
@@ -7179,6 +7224,27 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!50 &1619952184
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619952179}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1658298134
 GameObject:
   m_ObjectHideFlags: 0
@@ -7299,6 +7365,7 @@ GameObject:
   - component: {fileID: 1852680578}
   - component: {fileID: 1852680579}
   - component: {fileID: 1852680580}
+  - component: {fileID: 1852680581}
   m_Layer: 0
   m_Name: RootDentyuu1
   m_TagString: Dentyuu
@@ -7381,7 +7448,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.09500599}
@@ -7397,6 +7464,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.190012}
   m_EdgeRadius: 0
+--- !u!114 &1852680581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852680577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b05cf1a5b61b7104f9a1dac07cc197f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block: {fileID: 1852680580}
 --- !u!1 &1917898260
 GameObject:
   m_ObjectHideFlags: 0
