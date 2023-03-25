@@ -22,10 +22,13 @@ public class PlayerController_hiroppe : MonoBehaviour
     private bool fieldFlag = true;
     private bool moveFlag = true;
 
+    public GameObject _Grid;
+    private bool isCleared = false;
 
     void Start(){
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        ResetPos();
         
     }
 
@@ -44,14 +47,12 @@ public class PlayerController_hiroppe : MonoBehaviour
                 //else move = -1;
 
                 anim.SetBool("isWalk", true);
-                transform.localScale = new Vector3(Mathf.Sign(move) * 17, 17, 1);
+                transform.localScale = new Vector3(Mathf.Sign(move) * 17, 17, 0);
                 transform.position += new Vector3(move * moveSence, 0,0);
-            }
-            else {
+            }else {
                 anim.SetBool("isWalk",false);
             }
-        }
-        else transform.position = new Vector3(leftSide[fieldNum] + 1, transform.position.y, 1);
+        }else transform.position = new Vector3(leftSide[fieldNum] + 1, transform.position.y, 1);
     }
 
     void PlayerMoveJump(){
@@ -62,22 +63,40 @@ public class PlayerController_hiroppe : MonoBehaviour
         }
     }
 
+    public void ResetPos(){
+        transform.position = new Vector3(-165,-95,0);
+    }
+
     void WaitProcess(){
         if(fieldFlag && transform.position.x >= 240){
             fieldFlag = false;
             moveFlag = false;
         }
         if(!moveFlag){
-            Debug.Log("動けない");
-            if(_camera.GetComponent<CameraController_hiroppe>().WaitCamera()){
-                fieldNum++;
-                moveFlag = true;
+            //Debug.Log("動けない");
+            if(fieldNum<1){
+                if(_camera.GetComponent<CameraController_hiroppe>().WaitCamera()){
+                    fieldNum++;
+                    moveFlag = true;
+                }
             }
+            else if(isCleared){
+                if(_Grid.GetComponent<TilemapManager_hiroppe>().ClearPerform()){
+                    fieldNum = 0;
+                    moveFlag = true;
+                    fieldFlag = true;
+                }
+            }else{
+                if(_Grid.GetComponent<TilemapManager_hiroppe>().GameOverPerform()){
+                    fieldNum = 0;
+                    moveFlag = true;
+                    fieldFlag = true;
+                }
+            }
+            
         }
         
     }
-
-
 
     void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.tag == "Field"){
@@ -85,6 +104,9 @@ public class PlayerController_hiroppe : MonoBehaviour
         }
         if(col.gameObject.tag == "FieldSide"){
             isSide = true;
+        }
+        if(col.gameObject.tag == "Trap"){
+            moveFlag = false;
         }
     }
     void OnCollisionExit2D(Collision2D col){
