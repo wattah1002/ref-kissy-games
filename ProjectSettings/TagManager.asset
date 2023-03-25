@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Dentyuu
+  - Car
   layers:
   - Default
   - TransparentFX
