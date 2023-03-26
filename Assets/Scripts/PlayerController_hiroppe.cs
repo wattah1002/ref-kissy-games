@@ -79,13 +79,6 @@ public class PlayerController_hiroppe : MonoBehaviour
                     moveFlag = true;
                 }
             }
-            else if(isCleared){
-                _Grid.GetComponent<TilemapManager_hiroppe>().StartCoroutine("ClearProcess");
-                
-            }else{
-                _Grid.GetComponent<TilemapManager_hiroppe>().StartCoroutine("GameOverProcess");
-            }
-            
         }
         
     }
@@ -99,6 +92,11 @@ public class PlayerController_hiroppe : MonoBehaviour
         }
         if(col.gameObject.tag == "Trap"){
             moveFlag = false;
+            _Grid.GetComponent<TilemapManager_hiroppe>().StartCoroutine("GameOverProcess");
+        }
+        if(col.gameObject.tag == "Goal"){
+            moveFlag = false;
+            _Grid.GetComponent<TilemapManager_hiroppe>().StartCoroutine("ClearProcess");
         }
     }
     void OnCollisionExit2D(Collision2D col){

@@ -8,7 +8,7 @@ public class MessageManager_hiroppe : MonoBehaviour
     public GameObject _text;
     public Text message;
 
-    private float shakePower = 10f;
+    private float shakePower = 4f;
     void Start()
     {
         StartCoroutine("StartPerform");
