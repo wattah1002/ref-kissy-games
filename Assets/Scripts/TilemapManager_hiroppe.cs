@@ -1,20 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TilemapManager_hiroppe : MonoBehaviour
 {
     public GameObject[] walls;
     public GameObject[] traps;
+    public GameObject FrontScreen;
+    public GameObject text;
+    private MessageManager_hiroppe mm;
 
     private float r;
-    private bool moveFlag = false; 
 
-    public GameObject _camera;
-    public GameObject _player;
     void Start(){
+        StartCoroutine("StartProcess");
+        mm = text.GetComponent<MessageManager_hiroppe>();
         r = Random.Range(0,2);
-        //Debug.Log(r);
 
         for(int i=0;i<3;i++){
             if(i==r){
@@ -27,32 +29,28 @@ public class TilemapManager_hiroppe : MonoBehaviour
             }
         }
     }
-
-    public bool ClearPerform(){
-        StartCoroutine("WaitProcess");
-        if(moveFlag){
-            return true;
-        }else{
-            return false;
-        }
+    IEnumerator StartProcess(){
+        FrontScreen.SetActive(true);
+        yield return new WaitForSeconds(1);
+        FrontScreen.SetActive(false);
     }
-
-    public bool GameOverPerform(){
-        StartCoroutine("WaitProcess");
-        if(moveFlag){
-            return true;
-        }else{
-            return false;
-        }
+    IEnumerator ClearProcess(){
+        yield return new WaitForSeconds(.5f);
+        FrontScreen.SetActive(true);
+        FrontScreen.transform.position = new Vector3(480,0,0);
+        mm.SetText("クリア！");
+        yield return new WaitForSeconds(1);
+        mm.SetText("おめでとう！");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(0);
     }
-
+    IEnumerator GameOverProcess(){
+        yield return new WaitForSeconds(.5f);
+        FrontScreen.SetActive(true);
+        FrontScreen.transform.position = new Vector3(480,0,0);
+        mm.SetText("ゲームオーバー！");
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("HiroppeScene");
+    }
     
-
-    IEnumerator WaitProcess(){
-        yield return new WaitForSeconds(3);
-        _camera.GetComponent<CameraController_hiroppe>().ResetPos();
-        _player.GetComponent<PlayerController_hiroppe>().ResetPos();
-        moveFlag = true;
-        yield return null;
-    }
 }

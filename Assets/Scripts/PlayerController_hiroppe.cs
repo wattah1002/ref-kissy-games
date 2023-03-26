@@ -20,15 +20,18 @@ public class PlayerController_hiroppe : MonoBehaviour
     private int fieldNum = 0;
 
     private bool fieldFlag = true;
-    private bool moveFlag = true;
+    private bool moveFlag = false;
 
     public GameObject _Grid;
     private bool isCleared = false;
 
+    private bool isStarted = false;
+
     void Start(){
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        ResetPos();
+        transform.position = new Vector3(-165, -95, 0);
+        StartCoroutine("StartProcess");
         
     }
 
@@ -63,16 +66,12 @@ public class PlayerController_hiroppe : MonoBehaviour
         }
     }
 
-    public void ResetPos(){
-        transform.position = new Vector3(-165,-95,0);
-    }
-
     void WaitProcess(){
         if(fieldFlag && transform.position.x >= 240){
             fieldFlag = false;
             moveFlag = false;
         }
-        if(!moveFlag){
+        if(!moveFlag&&isStarted){
             //Debug.Log("動けない");
             if(fieldNum<1){
                 if(_camera.GetComponent<CameraController_hiroppe>().WaitCamera()){
@@ -81,17 +80,10 @@ public class PlayerController_hiroppe : MonoBehaviour
                 }
             }
             else if(isCleared){
-                if(_Grid.GetComponent<TilemapManager_hiroppe>().ClearPerform()){
-                    fieldNum = 0;
-                    moveFlag = true;
-                    fieldFlag = true;
-                }
+                _Grid.GetComponent<TilemapManager_hiroppe>().StartCoroutine("ClearProcess");
+                
             }else{
-                if(_Grid.GetComponent<TilemapManager_hiroppe>().GameOverPerform()){
-                    fieldNum = 0;
-                    moveFlag = true;
-                    fieldFlag = true;
-                }
+                _Grid.GetComponent<TilemapManager_hiroppe>().StartCoroutine("GameOverProcess");
             }
             
         }
@@ -113,5 +105,10 @@ public class PlayerController_hiroppe : MonoBehaviour
         if(col.gameObject.tag == "FieldSide"){
             isSide = false;
         }
+    }
+    IEnumerator StartProcess(){
+        yield return new WaitForSeconds(1);
+        isStarted = true;
+        moveFlag = true;
     }
 }

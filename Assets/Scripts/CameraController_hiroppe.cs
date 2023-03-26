@@ -28,7 +28,4 @@ public class CameraController_hiroppe : MonoBehaviour
             return false;
         }
     }
-    public void ResetPos(){
-        transform.position = new Vector3(0,0,-10);
-    }
 }
