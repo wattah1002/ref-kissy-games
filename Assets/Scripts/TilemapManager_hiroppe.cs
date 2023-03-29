@@ -10,12 +10,14 @@ public class TilemapManager_hiroppe : MonoBehaviour
     public GameObject FrontScreen;
     public GameObject text;
     private MessageManager_hiroppe mm ;
+    SoundEffectManager se;
 
     private float r;
 
     void Start(){
-        StartCoroutine("StartProcess");
         mm = text.GetComponent<MessageManager_hiroppe>();
+        se = GetComponent<SoundEffectManager>();
+        StartCoroutine("StartProcess");
         r = Random.Range(0,2);
 
         for(int i=0;i<3;i++){
@@ -30,6 +32,8 @@ public class TilemapManager_hiroppe : MonoBehaviour
         }
     }
     IEnumerator StartProcess(){
+        yield return new WaitForSeconds(.5f);
+        se.PlaySE(0);
         FrontScreen.SetActive(true);
         yield return new WaitForSeconds(1);
         FrontScreen.SetActive(false);
@@ -39,6 +43,7 @@ public class TilemapManager_hiroppe : MonoBehaviour
         FrontScreen.SetActive(true);
         FrontScreen.transform.position = new Vector3(480,0,0);
         mm.SetText("クリア！");
+        se.PlaySE(2);
         yield return new WaitForSeconds(1);
         mm.SetText("おめでとう！");
         yield return new WaitForSeconds(1);
@@ -49,6 +54,7 @@ public class TilemapManager_hiroppe : MonoBehaviour
         FrontScreen.SetActive(true);
         FrontScreen.transform.position = new Vector3(480,0,0);
         mm.SetText("ゲームオーバー！");
+        se.PlaySE(1);
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("HiroppeScene");
     }

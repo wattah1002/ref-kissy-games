@@ -26,8 +26,11 @@ public class PlayerController_hiroppe : MonoBehaviour
 
     private bool isStarted = false;
 
+    SoundEffectManager se;
+
     void Start(){
         anim = GetComponent<Animator>();
+        se = GetComponent<SoundEffectManager>();
         rb = GetComponent<Rigidbody2D>();
         transform.position = new Vector3(-165, -95, 0);
         StartCoroutine("StartProcess");
@@ -98,6 +101,9 @@ public class PlayerController_hiroppe : MonoBehaviour
         if(col.gameObject.tag == "Goal"){
             moveFlag = false;
             _Grid.GetComponent<TilemapManager_hiroppe>().StartCoroutine("ClearProcess");
+        }
+        if(col.gameObject.tag == "Ceiling"){
+            se.PlaySE(0);
         }
     }
     void OnCollisionExit2D(Collision2D col){
