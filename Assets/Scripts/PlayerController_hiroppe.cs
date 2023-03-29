@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController_hiroppe : MonoBehaviour
 {
     private Animator anim;
-    private Rigidbody2D rb;
+    private Rigidbody2D rb ;
 
     private float move;
     [SerializeField]
@@ -23,7 +23,6 @@ public class PlayerController_hiroppe : MonoBehaviour
     private bool moveFlag = false;
 
     public GameObject _Grid;
-    private bool isCleared = false;
 
     private bool isStarted = false;
 
@@ -44,7 +43,7 @@ public class PlayerController_hiroppe : MonoBehaviour
     void PlayerMoveHorizontal(){
         //左右移動
         move = Input.GetAxis("Horizontal");
-        if(transform.position.x > leftSide[fieldNum] && transform.position.x < 720){
+        if(transform.position.x > leftSide[fieldNum] && transform.position.x <= 720){
             if(move != 0 && moveFlag && !isSide){
                 //if(move >= 0) move =1;
                 //else move = -1;
@@ -55,11 +54,13 @@ public class PlayerController_hiroppe : MonoBehaviour
             }else {
                 anim.SetBool("isWalk",false);
             }
+        }else if(transform.position.x > 720){
+            transform.position = new Vector3(720,transform.position.y,0);
         }else transform.position = new Vector3(leftSide[fieldNum] + 1, transform.position.y, 1);
     }
 
     void PlayerMoveJump(){
-        if(isGround&&(Input.GetKeyDown("up")||Input.GetKeyDown(KeyCode.Space)&&moveFlag)){
+        if(isGround&&(Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.UpArrow)||Input.GetKeyDown(KeyCode.Space)&&moveFlag)){
 
             rb.AddForce(transform.up * jumpSpeed, ForceMode2D.Impulse);
             isGround = false;

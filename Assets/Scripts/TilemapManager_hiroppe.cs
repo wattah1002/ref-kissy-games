@@ -9,7 +9,7 @@ public class TilemapManager_hiroppe : MonoBehaviour
     public GameObject[] traps;
     public GameObject FrontScreen;
     public GameObject text;
-    private MessageManager_hiroppe mm;
+    private MessageManager_hiroppe mm ;
 
     private float r;
 
