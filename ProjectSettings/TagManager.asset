@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Field
+  - FieldSide
+  - Trap
+  - Goal
+  - Ceiling
   layers:
   - Default
   - TransparentFX
@@ -38,6 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackGround
+    uniqueID: 672363179
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
