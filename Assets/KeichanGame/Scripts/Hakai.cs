@@ -27,13 +27,11 @@ public class Hakai : MonoBehaviour
         {
             r.isKinematic = false;
             r.transform.SetParent(null);
-
             r.gameObject.AddComponent<DestroyScrap>();
             var vect = new Vector3(random.Next(min, max), random.Next(0, max), random.Next(min, max));
             r.AddForce(vect, ForceMode.Impulse);
             r.AddTorque(vect, ForceMode.Impulse);
         });
-
         Destroy(gameObject, 3.0f);
 
     }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HaMove : MonoBehaviour
 {
-
     public GameObject spawner;
     float gameSpeed;
     public float span;         // 座標移動の間隔
@@ -25,7 +24,7 @@ public class HaMove : MonoBehaviour
     void Update()
     {
         currentTime += Time.deltaTime;
-        if (is_rising && currentTime > span * gameSpeed)
+        if (is_rising && currentTime > span*gameSpeed)
         {
             transform.position += transform.up * moveSpeed;
             currentHeight += moveSpeed;
@@ -35,8 +34,7 @@ public class HaMove : MonoBehaviour
                 is_rising = false;
             }
         }
-
-        else if (currentTime > span * gameSpeed)
+        else if (currentTime > span*gameSpeed)
         {
             transform.position += transform.up * -1 * moveSpeed;
             currentHeight -= moveSpeed;
