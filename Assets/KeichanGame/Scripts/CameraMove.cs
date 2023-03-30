@@ -4,34 +4,42 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
+    public Transform cameraVer;
     public Transform cameraHor;
-    float horMax = 90f;
+    float horMax = 13f;
     float verMax = 20f;
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Cursor.lockState = CursorLockMode.None;
         float X_Rotation = Input.GetAxis("Mouse X");
         float Y_Rotation = Input.GetAxis("Mouse Y");
-        float hor = cameraHor.eulerAngles.y;
+        float hor = cameraHor.eulerAngles.x;
+        float ver = cameraVer.eulerAngles.y;
 
-        float changeAngle = X_Rotation * 2;
-        if (hor + changeAngle > horMax && hor + changeAngle < 180)
+        cameraVer.transform.Rotate(new Vector3(0, X_Rotation * 2, 0));
+        cameraHor.transform.Rotate(-Y_Rotation * 2, 0, 0);
+        if (hor > 13 && hor < 180)
         {
-            changeAngle = 0f;
+            cameraHor.transform.rotation = Quaternion.Euler(13, cameraVer.eulerAngles.y, 0);
         }
-        else if (hor + changeAngle < 360 - horMax && hor + changeAngle > 180)
+        if (hor < 360 - horMax && hor > 180)
         {
-            changeAngle = 0f;
+            cameraHor.transform.rotation = Quaternion.Euler(-1 * horMax, cameraVer.eulerAngles.y, 0);
         }
-        cameraHor.transform.Rotate(new Vector3(0, changeAngle, 0));
 
-        Cursor.lockState = CursorLockMode.Locked;
+        // if (ver < 360 - verMax && ver > 180)
+        // {
+        //     cameraVer.transform.rotation = Quaternion.Euler(cameraHor.eulerAngles.x, -1 * verMax, 0);
+        // }
+        // if (ver < verMax && ver > 180)
+        // {
+        //     cameraVer.transform.rotation = Quaternion.Euler(cameraHor.eulerAngles.x, verMax, 0);
+        // }
     }
 }

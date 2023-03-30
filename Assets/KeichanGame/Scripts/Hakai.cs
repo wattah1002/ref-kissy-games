@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class Hakai : MonoBehaviour
 {
-    CountScore countScore;
     // Start is called before the first frame update
     void Start()
     {
-        countScore = GameObject.Find("Score").GetComponent<CountScore>();
+
     }
 
     // Update is called once per frame
@@ -43,7 +42,6 @@ public class Hakai : MonoBehaviour
         if (collision.gameObject.tag == "Hammer")
         {
             destroyObject();
-            countScore.score += 10;
         }
 
     }
