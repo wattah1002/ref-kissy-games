@@ -24,14 +24,23 @@ EditorBuildSettings:
     path: Assets/Scenes/KirariScene.unity
     guid: 433f638461cf34bbd9668d96e79c5fb4
   - enabled: 1
+    path: Assets/Scenes/HollyGameOver.unity
+    guid: 7f9b193096e2b4c6a9b03e513f7635f4
+  - enabled: 1
+    path: Assets/Scenes/HollyStart.unity
+    guid: 752e7d9a4a41d4f85a17d277397a46d9
+  - enabled: 1
+    path: Assets/Scenes/HollyClear.unity
+    guid: 1a924090a4d2b49b1bb5dc647c243bea
+  - enabled: 1
     path: Assets/Scenes/KeichanScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/ShibaScene.unity
     guid: 34902400a93b4405b8a39806f2dcf39c
-  - enabled: 1
-    path: Assets/Scenes/EbiLoadScene.unity
-    guid: 342b3fdf5cfe9bc4a8256328282ecdb4
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/HiroppeScene.unity
     guid: 73cca7a2cab2444dbb9ad12e290aed8f
