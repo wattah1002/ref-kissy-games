@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMove : MonoBehaviour
+public class KeichanCameraMove : MonoBehaviour
 {
     public Transform cameraHor;
     float horMax = 90f;

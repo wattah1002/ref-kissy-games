@@ -1,24 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class MessageControl : MonoBehaviour
+public class ResultText : MonoBehaviour
 {
-    int targetTime = 1;
-    float elapsedTime = 0;
+    public Text text;
     // Start is called before the first frame update
     void Start()
     {
-
+        text = gameObject.GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        elapsedTime += Time.deltaTime;
-        if (elapsedTime >= targetTime)
-        {
-            gameObject.SetActive(false);
-        }
+
+    }
+
+    public void GameOver(int score)
+    {
+        text.text = "Score：" + score.ToString();
     }
 }

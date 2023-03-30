@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOver : MonoBehaviour
+public class KeichanGameOver : MonoBehaviour
 {
     public GameObject spawner;
     public GameObject camera;
@@ -15,7 +15,7 @@ public class GameOver : MonoBehaviour
     {
 
         // spawner.GetComponent<SpawnOyashirazu>().enabled = false;
-        camera.GetComponent<CameraMove>().enabled = false;
+        camera.GetComponent<KeichanCameraMove>().enabled = false;
         spawner.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

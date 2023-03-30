@@ -4,15 +4,18 @@ using UnityEngine;
 
 using UnityEngine.UI;
 
-public class Timer : MonoBehaviour
+public class KeichanTimer : MonoBehaviour
 {
-    AudioSource audioSource;
+    public AudioSource audioSource;
     public GameObject gameOver;
     public GameObject title;
     public GameObject retry;
+    public GameObject score;
+    public GameObject result;
     public float timeLimit = 30;
     public float remainingTime;
     public Text countDownText;
+    public ResultText resultText;
 
     void awake()
     {
@@ -29,6 +32,10 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (remainingTime < 5)
+        {
+            audioSource.pitch = 1.25f;
+        }
         if (remainingTime > 0)
         {
             remainingTime -= Time.deltaTime;
@@ -41,6 +48,8 @@ public class Timer : MonoBehaviour
             title.SetActive(true);
             retry.SetActive(true);
             gameOver.SetActive(true);
+            score.SetActive(false);
+            resultText.GameOver(score.GetComponent<CountScore>().score);
         }
     }
 }

@@ -25,7 +25,7 @@ public class SpawnOyashirazu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Timer t = timer.GetComponent<Timer>();
+        KeichanTimer t = timer.GetComponent<KeichanTimer>();
         gameSpeed = (float)Math.Ceiling(t.remainingTime / t.timeLimit * 4) / 4;
         timeCount += Time.deltaTime;
         if (timeCount >= gameSpeed)
