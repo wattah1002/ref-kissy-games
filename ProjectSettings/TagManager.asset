@@ -4,10 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Ground
+  - Dentyuu
+  - Car
+  - FallBlock
+  - Goal
   - Field
   - FieldSide
   - Trap
-  - Goal
   - Ceiling
   layers:
   - Default
