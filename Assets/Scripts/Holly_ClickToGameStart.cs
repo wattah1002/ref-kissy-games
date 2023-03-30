@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ClickToGameStart : MonoBehaviour
+public class Holly_ClickToGameStart : MonoBehaviour
 {
     public Camera camera_object;
     private RaycastHit hit;

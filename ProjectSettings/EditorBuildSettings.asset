@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HollyStart.unity
     guid: 752e7d9a4a41d4f85a17d277397a46d9
+  - enabled: 1
+    path: Assets/Scenes/HollyClear.unity
+    guid: 1a924090a4d2b49b1bb5dc647c243bea
   m_configObjects: {}

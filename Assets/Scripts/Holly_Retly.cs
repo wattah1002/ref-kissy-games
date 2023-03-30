@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ButtonClickSceneTransition : MonoBehaviour
+public class Holly_Retly : MonoBehaviour
 {
-
-    public string SceneName;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +16,8 @@ public class ButtonClickSceneTransition : MonoBehaviour
     {
         
     }
-
     public void OnClick()
     {
-        SceneManager.LoadScene(SceneName);
+        SceneManager.LoadScene("HollyStart");
     }
 }

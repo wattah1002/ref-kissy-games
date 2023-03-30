@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameClear : MonoBehaviour
+public class Holly_GameClear : MonoBehaviour
 {
     public GameObject Refunoid;
     public GameObject ClearEffect;
@@ -24,7 +25,13 @@ public class GameClear : MonoBehaviour
         {
             Debug.Log("clear!!!");
             Instantiate(ClearEffect.gameObject, EffectPoint.transform.position, Quaternion.identity);
-            Refunoid.gameObject.SetActive (false);
+            StartCoroutine("HollyClear");
         }
+    }
+    IEnumerator HollyClear()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("HollyClear");
+        Refunoid.gameObject.SetActive (false);
     }
 }

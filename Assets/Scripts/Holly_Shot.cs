@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shot : MonoBehaviour
+public class Holly_Shot : MonoBehaviour
 {
     public GameObject banana;// 発射する弾
     public float bulletSpeed = 500;// 弾のスピード

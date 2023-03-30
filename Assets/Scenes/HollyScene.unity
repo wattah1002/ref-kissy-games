@@ -982,7 +982,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 584125943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a4b4800651e04b9692337f862157a63, type: 3}
+  m_Script: {fileID: 11500000, guid: eb7f19a4234234a7fb70b402f724749b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Refunoid: {fileID: 819499084}
@@ -2124,7 +2124,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1526291032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afed1d82199554bcdbaccb73192141dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c4d4d9da1f2540d981a19d2a0e8fadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &1526291034
@@ -2550,8 +2550,8 @@ GameObject:
   - component: {fileID: 1716654090}
   - component: {fileID: 1716654089}
   - component: {fileID: 1716654088}
-  - component: {fileID: 1716654091}
   - component: {fileID: 1716654092}
+  - component: {fileID: 1716654091}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2634,11 +2634,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1716654087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c4a03add690e47f7b0045f137dfcadf, type: 3}
+  m_Script: {fileID: 11500000, guid: 0936a0bc44fe2419abb901377c4e8c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   banana: {fileID: 1664966191533023345, guid: 988ce6f2caecc4e6f82cd2f859922409, type: 3}
-  bulletSpeed: 50
+  bulletSpeed: 500
   SE1: {fileID: 8300000, guid: 826f31631f70e45f6801d7b3bd0dca28, type: 3}
   GorillaAnim: {fileID: 456352188}
 --- !u!82 &1716654092
