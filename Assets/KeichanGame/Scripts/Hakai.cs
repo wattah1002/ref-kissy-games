@@ -6,10 +6,13 @@ using UnityEngine;
 public class Hakai : MonoBehaviour
 {
     CountScore countScore;
+    AudioSource audioSource;
+    public AudioClip breakHa;
     // Start is called before the first frame update
     void Start()
     {
         countScore = GameObject.Find("Score").GetComponent<CountScore>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,6 +26,7 @@ public class Hakai : MonoBehaviour
         var random = new System.Random();
         var min = -3;
         var max = 3;
+        audioSource.PlayOneShot(breakHa);
         gameObject.GetComponentsInChildren<Rigidbody>().ToList().ForEach(r =>
         {
             r.isKinematic = false;

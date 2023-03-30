@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
+    AudioSource audioSource;
     public GameObject gameOver;
     public GameObject title;
     public GameObject retry;
@@ -23,6 +24,7 @@ public class Timer : MonoBehaviour
         remainingTime = timeLimit;
         title.SetActive(false);
         retry.SetActive(false);
+        audioSource.Play();
     }
 
     // Update is called once per frame
@@ -36,6 +38,7 @@ public class Timer : MonoBehaviour
         }
         else
         {
+            audioSource.Stop();
             title.SetActive(true);
             retry.SetActive(true);
             gameOver.SetActive(true);
