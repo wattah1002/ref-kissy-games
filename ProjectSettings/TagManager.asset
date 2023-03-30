@@ -8,6 +8,7 @@ TagManager:
   - Dentyuu
   - Car
   - FallBlock
+  - Goal
   layers:
   - Default
   - TransparentFX
