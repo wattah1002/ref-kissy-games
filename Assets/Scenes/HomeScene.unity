@@ -667,7 +667,7 @@ GameObject:
   - component: {fileID: 458230438}
   - component: {fileID: 458230437}
   m_Layer: 5
-  m_Name: TitleLogo
+  m_Name: LogoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -725,7 +725,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "<color=#A1F5A9>\u308C\u3075</color>\u30FB<color>\u304D\u3063\u3057\u30FC</color>\u30B2\u30FC\u30E0\u30BA"
+  m_Text: "<color=#6ED9BC>\u308C\u3075</color>\u30FB<color=#bbbcde>\u304D\u3063\u3057\u30FC</color>\u30B2\u30FC\u30E0\u30BA"
 --- !u!222 &458230438
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1789,7 +1789,7 @@ GameObject:
   - component: {fileID: 1698241310}
   - component: {fileID: 1698241309}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1828,7 +1828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
