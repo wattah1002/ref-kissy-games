@@ -6,8 +6,22 @@ TagManager:
   tags:
   - Grounded
   - CAT
-  - Goal
   - Coin
+  - VeryCuteBullet
+  - Wall
+  - Refu
+  - Hammer
+  - vanilla
+  - cocoa
+  - Ground
+  - Dentyuu
+  - Car
+  - FallBlock
+  - Goal
+  - Field
+  - FieldSide
+  - Trap
+  - Ceiling
   layers:
   - Default
   - TransparentFX
@@ -42,6 +56,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackGround
+    uniqueID: 672363179
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
