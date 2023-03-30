@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (!goal)
         {
             if (Input.GetKeyDown(KeyCode.Space) & ground & !gameOver)
