@@ -20,6 +20,7 @@ public class RefuAnimation3 : StateMachineBehaviour
         if(Nemusa <= 0)
         {
             refuanimator.SetBool("awake",true);
+            sleepingcontroller.sound_Zz.Pause();
         }
         else
         {

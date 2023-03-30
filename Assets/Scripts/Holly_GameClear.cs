@@ -23,7 +23,7 @@ public class Holly_GameClear : MonoBehaviour
     {
         if(other.gameObject.tag == "Wall")
         {
-            Debug.Log("clear!!!");
+            Debug.Log("clear!!!!!!!");
             Instantiate(ClearEffect.gameObject, EffectPoint.transform.position, Quaternion.identity);
             StartCoroutine("HollyClear");
         }

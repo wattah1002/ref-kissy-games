@@ -18,6 +18,6 @@ public class Holly_BackToTop : MonoBehaviour
     }
     public void OnClick()
     {
-        SceneManager.LoadScene("HollyStart");
+        SceneManager.LoadScene("HomeScene");
     }
 }
