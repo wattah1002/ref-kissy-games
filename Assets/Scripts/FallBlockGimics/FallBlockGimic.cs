@@ -5,9 +5,15 @@ using UnityEngine;
 public class FallBlockGimic : MonoBehaviour
 {
     public bool fall;
+
+    EbiGameController game;
+    public float x;
+    public float y;
+    public float z;
     void Start()
     {
-        
+        GameObject obj = GameObject.Find("GameController");
+        game = obj.GetComponent<EbiGameController>();
     }
 
     // Update is called once per frame
@@ -16,6 +22,12 @@ public class FallBlockGimic : MonoBehaviour
         if (fall & transform.position.y > -6)
         {
             transform.position += new Vector3(0, -0.01f, 0);
+        }
+
+        if (game.scene == 0)
+        {
+            transform.position = new Vector3(x, y, z);
+            fall = false;
         }
     }
 

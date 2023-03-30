@@ -6,9 +6,16 @@ public class FallDentyuuGimic : MonoBehaviour
 {
     public bool fall1;
     public float fallDirection = 1;
+
+    public float x;
+    public float y;
+    public float z;
+
+    EbiGameController game;
     void Start()
     {
-        
+        GameObject obj = GameObject.Find("GameController");
+        game = obj.GetComponent<EbiGameController>();
     }
 
     // Update is called once per frame
@@ -17,6 +24,12 @@ public class FallDentyuuGimic : MonoBehaviour
         if (fall1 & transform.position.y > fallDirection)
         {
             transform.position += new Vector3(0, -0.06f, 0);
+        }
+
+        if (game.scene == 0)
+        {
+            transform.position = new Vector3(x, y, z);
+            fall1 = false;
         }
     }
 

@@ -7,9 +7,15 @@ public class RedCarGimic : MonoBehaviour
     public bool go;
     public GameObject car;
     public Animator start;
+    EbiGameController game;
+    public float x;
+    public float y;
+    public float z;
     void Start()
     {
         start = car.GetComponent<Animator>();
+        GameObject obj = GameObject.Find("GameController");
+        game = obj.GetComponent<EbiGameController>();
     }
 
     // Update is called once per frame
@@ -23,6 +29,13 @@ public class RedCarGimic : MonoBehaviour
         else
         {
             start.SetBool("BlGo", false);
+        }
+
+        if (game.scene == 0)
+        {
+            transform.position = new Vector3(x, y, z);
+            start.SetBool("BlGo", false);
+            go = false;
         }
     }
 

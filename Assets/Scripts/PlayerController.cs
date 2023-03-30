@@ -15,8 +15,10 @@ public class PlayerController : MonoBehaviour
     public BoxCollider2D box;
     public bool goal;
     public bool clear;
+    public bool hpDecrease;
 
     EbiGameController game;
+    EbiHPController hp;
     void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
@@ -28,6 +30,8 @@ public class PlayerController : MonoBehaviour
 
         GameObject obj = GameObject.Find("GameController");
         game = obj.GetComponent<EbiGameController>();
+        GameObject obj2 = GameObject.Find("HPText");
+        hp = obj2.GetComponent<EbiHPController>();
     }
 
     // Update is called once per frame
@@ -70,6 +74,13 @@ public class PlayerController : MonoBehaviour
                 {
                     rb.isKinematic = true;
                     rb.velocity = Vector2.zero;
+                    game.scene = 0;
+
+                    if (!hpDecrease)
+                    {
+                        hp.hp -= 1;
+                        hpDecrease = true;
+                    }
                 }
             }
             else
@@ -90,6 +101,10 @@ public class PlayerController : MonoBehaviour
         else if (game.scene == 0)
         {
             transform.position = new Vector3(-2.56f, -2, 0);
+            gameOver = false;
+            box.enabled = true;
+            rb.isKinematic = false;
+            hpDecrease = false;
             walk.SetBool("BlWalk", false);
             dead.SetBool("BlDead", false);
         }

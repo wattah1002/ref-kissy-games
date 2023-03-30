@@ -11,6 +11,11 @@ public class PuriousCar : MonoBehaviour
     PuriousJudge judge;
 
     public bool go;
+
+    EbiGameController game;
+    public float x;
+    public float y;
+    public float z;
     void Start()
     {
         normal = purious.GetComponent<Animator>();
@@ -18,6 +23,8 @@ public class PuriousCar : MonoBehaviour
 
         GameObject obj = GameObject.Find("PuriousGoJudge");
         judge = obj.GetComponent<PuriousJudge>();
+        GameObject obj2 = GameObject.Find("GameController");
+        game = obj2.GetComponent<EbiGameController>();
     }
 
     // Update is called once per frame
@@ -32,7 +39,15 @@ public class PuriousCar : MonoBehaviour
         if (judge.letsGo & transform.position.y < 180)
         {
             fast.SetBool("BlAccel", true);
-            transform.position += new Vector3(0.03f, 0, 0);
+            transform.position += new Vector3(0.025f, 0, 0);
+        }
+
+        if (game.scene == 0)
+        {
+            transform.position = new Vector3(x, y, z);
+            normal.SetBool("BlGo", false);
+            fast.SetBool("BlAccel", false);
+            go = false;
         }
     }
 
