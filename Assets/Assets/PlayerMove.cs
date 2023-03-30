@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public Rigidbody rb;
+    public GameObject _canvas;
+    private Goal goal;
     // Start is called before the first frame update
     void Start()
     {
-        
+      goal = _canvas.GetComponent<Goal>();  
     }
 
     // Update is called once per frame
@@ -35,4 +37,12 @@ public class PlayerMove : MonoBehaviour
            transform .position=new Vector3(0,5,0);
         }
     }
+    void OnCollisionEnter(Collision col){
+    if(col.gameObject.tag == "vanilla"){
+        goal.Vanilla();
+    }
+    if(col.gameObject.tag == "cocoa"){
+        goal.Cocoa();
+    }
+}
 }
