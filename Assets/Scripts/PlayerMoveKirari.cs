@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMoveKirari : MonoBehaviour
 {
     public Rigidbody2D rb;
     public bool Grounded;
