@@ -24,7 +24,6 @@ public class Timer : MonoBehaviour
         remainingTime = timeLimit;
         title.SetActive(false);
         retry.SetActive(false);
-        audioSource.Play();
     }
 
     // Update is called once per frame
