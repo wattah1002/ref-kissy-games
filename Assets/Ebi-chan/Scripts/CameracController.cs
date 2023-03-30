@@ -5,9 +5,12 @@ using UnityEngine;
 public class CameracController : MonoBehaviour
 {
     public GameObject player;
+
+    EbiGameController game;
     void Start()
     {
-        
+        GameObject obj = GameObject.Find("GameController");
+        game = obj.GetComponent<EbiGameController>();
     }
 
     // Update is called once per frame

@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public BoxCollider2D box;
     public bool goal;
     public bool clear;
+
+    EbiGameController game;
     void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
@@ -23,63 +25,75 @@ public class PlayerController : MonoBehaviour
         walk = GetComponent<Animator>();
         dead = GetComponent<Animator>();
         transform.position = new Vector3(-2.2f, -2, 0);
+
+        GameObject obj = GameObject.Find("GameController");
+        game = obj.GetComponent<EbiGameController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!goal)
+        if (game.scene == 1)
         {
-            if (Input.GetKeyDown(KeyCode.Space) & ground & !gameOver)
+            if (!goal)
             {
-                rb.AddForce(Vector2.up * 300);
-            }
+                if (Input.GetKeyDown(KeyCode.Space) & ground & !gameOver)
+                {
+                    rb.AddForce(Vector2.up * 300);
+                }
 
-            if (Input.GetKey(KeyCode.RightArrow) & !gameOver)
-            {
-                walk.SetBool("BlWalk", true);
-                transform.localScale = new Vector3(3, 3, 3);
-                transform.position += new Vector3(0.01f, 0, 0);
-            }
-            else if (Input.GetKey(KeyCode.LeftArrow) & !gameOver)
-            {
-                walk.SetBool("BlWalk", true);
-                transform.localScale = new Vector3(-3, 3, 3);
-                transform.position += new Vector3(-0.01f, 0, 0);
+                if (Input.GetKey(KeyCode.RightArrow) & !gameOver)
+                {
+                    walk.SetBool("BlWalk", true);
+                    transform.localScale = new Vector3(3, 3, 3);
+                    transform.position += new Vector3(0.01f, 0, 0);
+                }
+                else if (Input.GetKey(KeyCode.LeftArrow) & !gameOver)
+                {
+                    walk.SetBool("BlWalk", true);
+                    transform.localScale = new Vector3(-3, 3, 3);
+                    transform.position += new Vector3(-0.01f, 0, 0);
+                }
+                else
+                {
+                    walk.SetBool("BlWalk", false);
+                }
+
+                if (transform.position.y < -4 & !gameOverJump)
+                {
+                    gameOverJumpForce = 400;
+                    rb.velocity = Vector3.zero;
+                    GameOverAction();
+                }
+
+                if (transform.position.y < -7)
+                {
+                    rb.isKinematic = true;
+                    rb.velocity = Vector2.zero;
+                }
             }
             else
             {
-                walk.SetBool("BlWalk", false);
-            }
-
-            if (transform.position.y < -4 & !gameOverJump)
-            {
-                gameOverJumpForce = 400;
-                rb.velocity = Vector3.zero;
-                GameOverAction();
-            }
-
-            if (transform.position.y < -7)
-            {
-                rb.isKinematic = true;
-                rb.velocity = Vector2.zero;
-            }
-        } 
-        else
-        {
-            if (transform.position.x < 173)
-            {
-                walk.SetBool("BlWalk", true);
-                transform.localScale = new Vector3(3, 3, 3);
-                transform.position += new Vector3(0.003f, 0, 0);
-            }
-            else
-            {
-                playerSprite.enabled = false;
-                clear = true;
+                if (transform.position.x < 173)
+                {
+                    walk.SetBool("BlWalk", true);
+                    transform.localScale = new Vector3(3, 3, 3);
+                    transform.position += new Vector3(0.003f, 0, 0);
+                }
+                else
+                {
+                    playerSprite.enabled = false;
+                    clear = true;
+                }
             }
         }
-        
+        else if (game.scene == 0)
+        {
+            transform.position = new Vector3(-2.56f, -2, 0);
+            walk.SetBool("BlWalk", false);
+            dead.SetBool("BlDead", false);
+        }
+           
     }
 
     private void OnCollisionExit2D(Collision2D collision)
