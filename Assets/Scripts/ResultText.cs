@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ResultText : MonoBehaviour
 {
-    public Text text;
+    Text text;
     // Start is called before the first frame update
     void Start()
     {
