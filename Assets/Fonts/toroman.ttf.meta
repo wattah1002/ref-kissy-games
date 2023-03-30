@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d4880b27577bb4fb8ad072fa96f56604
+guid: 9c18d7965c75a4307a256236282e5471
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - bananaslip plus
+  - AnnyantRoman
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

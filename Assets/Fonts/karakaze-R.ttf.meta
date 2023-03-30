@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d4880b27577bb4fb8ad072fa96f56604
+guid: fc5b7a5d3323b41c6a7fee502c78412d
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - bananaslip plus
+  - karakazeR
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
