@@ -8,6 +8,7 @@ public class Hakai : MonoBehaviour
     CountScore countScore;
     AudioSource audioSource;
     public AudioClip breakHa;
+    bool isDestroy;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,10 +43,11 @@ public class Hakai : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Hammer")
+        if (collision.gameObject.tag == "Hammer" && !isDestroy)
         {
             destroyObject();
             countScore.score += 10;
+            isDestroy = true;
         }
 
     }
