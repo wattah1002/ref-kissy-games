@@ -11,18 +11,42 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EbichanScene.unity
     guid: 3c24c96c0be6f4e1bb89eb54d321f09e
-  - enabled: 1
-    path: Assets/Scenes/KeichanScene.unity
-    guid: 5fbcecae058094dc8884eaac77c4c8b8
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/HollyScene.unity
     guid: 5f92bfe52aec44c48b2a4f9a41529908
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/ShibaScene.unity
-    guid: 2bbc2dba7a6fe42918880eff420bc469
+    path: Assets/Kirari Assets/Kirari Scenes/Kirari GameStart.unity
+    guid: f3179aac1414443e08d4b13bfd7a0e75
+  - enabled: 1
+    path: Assets/Kirari Assets/Kirari Scenes/KirariGameClear.unity
+    guid: 5af5a5311bdcc47f98f7265118d105bc
   - enabled: 1
     path: Assets/Scenes/KirariScene.unity
     guid: 433f638461cf34bbd9668d96e79c5fb4
+  - enabled: 1
+    path: Assets/Scenes/HollyGameOver.unity
+    guid: 7f9b193096e2b4c6a9b03e513f7635f4
+  - enabled: 1
+    path: Assets/Scenes/HollyStart.unity
+    guid: 752e7d9a4a41d4f85a17d277397a46d9
+  - enabled: 1
+    path: Assets/Scenes/HollyClear.unity
+    guid: 1a924090a4d2b49b1bb5dc647c243bea
+  - enabled: 1
+    path: Assets/Scenes/KeichanScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/ShibaScene.unity
+    guid: 34902400a93b4405b8a39806f2dcf39c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/HiroppeScene.unity
     guid: 73cca7a2cab2444dbb9ad12e290aed8f
