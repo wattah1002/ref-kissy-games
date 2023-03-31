@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,8 +16,13 @@ public class PlayerController : MonoBehaviour
     public BoxCollider2D box;
     public bool goal;
     public bool clear;
+    public bool hpDecrease;
+    AudioSource playerAudio;
+    public AudioClip jumpSE;
+    public AudioClip deadSE;
 
     EbiGameController game;
+    EbiHPController hp;
     void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
@@ -24,10 +30,13 @@ public class PlayerController : MonoBehaviour
         ground = false;
         walk = GetComponent<Animator>();
         dead = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
         transform.position = new Vector3(-2.2f, -2, 0);
 
         GameObject obj = GameObject.Find("GameController");
         game = obj.GetComponent<EbiGameController>();
+        GameObject obj2 = GameObject.Find("HPText");
+        hp = obj2.GetComponent<EbiHPController>();
     }
 
     // Update is called once per frame
@@ -40,19 +49,20 @@ public class PlayerController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space) & ground & !gameOver)
                 {
                     rb.AddForce(Vector2.up * 300);
+                    playerAudio.PlayOneShot(jumpSE);
                 }
 
                 if (Input.GetKey(KeyCode.RightArrow) & !gameOver)
                 {
                     walk.SetBool("BlWalk", true);
                     transform.localScale = new Vector3(3, 3, 3);
-                    transform.position += new Vector3(0.01f, 0, 0);
+                    transform.position += new Vector3(4.7f, 0, 0) * Time.deltaTime;
                 }
                 else if (Input.GetKey(KeyCode.LeftArrow) & !gameOver)
                 {
                     walk.SetBool("BlWalk", true);
                     transform.localScale = new Vector3(-3, 3, 3);
-                    transform.position += new Vector3(-0.01f, 0, 0);
+                    transform.position += new Vector3(-4.7f, 0, 0) * Time.deltaTime;
                 }
                 else
                 {
@@ -61,6 +71,7 @@ public class PlayerController : MonoBehaviour
 
                 if (transform.position.y < -4 & !gameOverJump)
                 {
+                    playerAudio.PlayOneShot(deadSE);
                     gameOverJumpForce = 400;
                     rb.velocity = Vector3.zero;
                     GameOverAction();
@@ -70,6 +81,17 @@ public class PlayerController : MonoBehaviour
                 {
                     rb.isKinematic = true;
                     rb.velocity = Vector2.zero;
+                    game.scene = 0;
+
+                    if (!hpDecrease)
+                    {
+                        hp.hp -= 1;
+                        hpDecrease = true;
+                        if (hp.hp < 1)
+                        {
+                            SceneManager.LoadScene("EbiGameOver");
+                        }
+                    }
                 }
             }
             else
@@ -78,18 +100,22 @@ public class PlayerController : MonoBehaviour
                 {
                     walk.SetBool("BlWalk", true);
                     transform.localScale = new Vector3(3, 3, 3);
-                    transform.position += new Vector3(0.003f, 0, 0);
+                    transform.position += new Vector3(1.41f, 0, 0) * Time.deltaTime;
                 }
                 else
                 {
                     playerSprite.enabled = false;
-                    clear = true;
+                    StartCoroutine("ClearWait");
                 }
             }
         }
         else if (game.scene == 0)
         {
             transform.position = new Vector3(-2.56f, -2, 0);
+            gameOver = false;
+            box.enabled = true;
+            rb.isKinematic = false;
+            hpDecrease = false;
             walk.SetBool("BlWalk", false);
             dead.SetBool("BlDead", false);
         }
@@ -118,6 +144,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Car")
         {
+            playerAudio.PlayOneShot(deadSE);
             gameOverJumpForce = 250;
             rb.velocity = Vector3.zero;
             GameOverAction();
@@ -125,6 +152,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "BrokenCar")
         {
+            playerAudio.PlayOneShot(deadSE);
             gameOverJumpForce = 350;
             rb.velocity = Vector3.zero;
             GameOverAction();
@@ -132,6 +160,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "Dentyuu")
         {
+            playerAudio.PlayOneShot(deadSE);
             gameOverJumpForce = 300;
             rb.velocity = Vector3.zero;
             GameOverAction();
@@ -150,5 +179,11 @@ public class PlayerController : MonoBehaviour
         dead.SetBool("BlDead", true);
         rb.AddForce(Vector2.up * gameOverJumpForce);
         gameOverJump = true;
+    }
+
+    IEnumerator ClearWait()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("EbiGameClear");
     }
 }
