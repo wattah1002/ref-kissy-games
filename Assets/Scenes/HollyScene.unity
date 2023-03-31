@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1111694720}
-  m_IndirectSpecularColor: {r: 0.43681622, g: 0.48443103, b: 0.5647117, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366753, g: 0.48427093, b: 0.5645238, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -988,6 +988,7 @@ MonoBehaviour:
   Refunoid: {fileID: 819499084}
   ClearEffect: {fileID: 7346219661704888241, guid: 0f229b0fa2b3045b8a6b1066d7bc2b10, type: 3}
   EffectPoint: {fileID: 380047212}
+  anim: {fileID: 819499086}
 --- !u!1 &635401133 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8303893302661877267, guid: f997ac85537c54c00ba87ce264852bb4, type: 3}
