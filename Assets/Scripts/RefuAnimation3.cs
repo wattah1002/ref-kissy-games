@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class RefuAnimation3 : StateMachineBehaviour
 {
-    GameObject sleepingmeter;
-    SleepMeter sleepmeter;
-    Animator refuanimator;
+    public GameObject sleepingmeter;
+    public SleepMeter sleepmeter;
+    public Animator refuanimator;
 
-    GameObject RefuNoid;
-    SleepingController sleepingcontroller;
+    public GameObject RefuNoid;
+    public SleepingController sleepingcontroller;
 
     public override void OnStateExit(Animator refuanimator, AnimatorStateInfo stateInfo, int layerIndex) 
     {
+        RefuNoid = GameObject.Find("refu_noid");
+        sleepingcontroller = RefuNoid.GetComponent<SleepingController>();
         sleepingmeter = GameObject.Find("SleepMeter");
         sleepmeter = sleepingmeter.GetComponent<SleepMeter>();
         float Nemusa = sleepmeter.SleepingBarometer;
@@ -27,8 +29,7 @@ public class RefuAnimation3 : StateMachineBehaviour
             refuanimator.SetBool("wake3",false);
         }
 
-        RefuNoid = GameObject.Find("refu_noid");
-        sleepingcontroller = RefuNoid.GetComponent<SleepingController>();
+
         if(sleepingcontroller.CleanHits <= 10)
         {
             sleepingcontroller.IsSleeping = true;

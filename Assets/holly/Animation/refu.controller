@@ -161,6 +161,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 659bf8f98354d444a8f0781cacbcff58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sleepingmeter: {fileID: 0}
+  sleepmeter: {fileID: 0}
+  refuanimator: {fileID: 0}
+  RefuNoid: {fileID: 0}
+  sleepingcontroller: {fileID: 0}
 --- !u!1101 &-6279047843554214796
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
