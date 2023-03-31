@@ -12,10 +12,14 @@ public class FallDentyuuGimic : MonoBehaviour
     public float z;
 
     EbiGameController game;
+    AudioSource dentyuuAudio;
+    public AudioClip dentyuuFall;
+    bool fallGo;
     void Start()
     {
         GameObject obj = GameObject.Find("GameController");
         game = obj.GetComponent<EbiGameController>();
+        dentyuuAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,12 +28,18 @@ public class FallDentyuuGimic : MonoBehaviour
         if (fall1 & transform.position.y > fallDirection)
         {
             transform.position += new Vector3(0, -28.2f, 0) * Time.deltaTime;
+            if (!fallGo)
+            {
+                dentyuuAudio.PlayOneShot(dentyuuFall);
+                fallGo = true;
+            }
         }
 
         if (game.scene == 0)
         {
             transform.position = new Vector3(x, y, z);
             fall1 = false;
+            fallGo = false;
         }
     }
 

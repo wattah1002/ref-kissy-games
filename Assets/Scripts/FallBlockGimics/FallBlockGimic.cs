@@ -10,24 +10,35 @@ public class FallBlockGimic : MonoBehaviour
     public float x;
     public float y;
     public float z;
+
+    AudioSource blockAudio;
+    public AudioClip blockFall;
+    bool fallGo;
     void Start()
     {
         GameObject obj = GameObject.Find("GameController");
         game = obj.GetComponent<EbiGameController>();
+        blockAudio = obj.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (fall & transform.position.y > -6)
+        if (fall & transform.position.y > -10)
         {
             transform.position += new Vector3(0, -4.7f, 0) * Time.deltaTime;
+            if (!fallGo)
+            {
+                blockAudio.PlayOneShot(blockFall);
+                fallGo = true;
+            }
         }
 
         if (game.scene == 0)
         {
             transform.position = new Vector3(x, y, z);
             fall = false;
+            fallGo = false;
         }
     }
 

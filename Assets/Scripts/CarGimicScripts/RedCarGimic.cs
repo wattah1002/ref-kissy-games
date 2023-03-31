@@ -11,11 +11,17 @@ public class RedCarGimic : MonoBehaviour
     public float x;
     public float y;
     public float z;
+
+    AudioSource redCarAudio;
+    public AudioClip carGo;
+    bool musicGo;
     void Start()
     {
         start = car.GetComponent<Animator>();
         GameObject obj = GameObject.Find("GameController");
         game = obj.GetComponent<EbiGameController>();
+
+        redCarAudio= game.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,11 +37,18 @@ public class RedCarGimic : MonoBehaviour
             start.SetBool("BlGo", false);
         }
 
+        if (go & !musicGo)
+        {
+            redCarAudio.PlayOneShot(carGo);
+            musicGo = true;
+        }
+
         if (game.scene == 0)
         {
             transform.position = new Vector3(x, y, z);
             start.SetBool("BlGo", false);
             go = false;
+            musicGo = false;
         }
     }
 

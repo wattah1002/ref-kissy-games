@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     public bool goal;
     public bool clear;
     public bool hpDecrease;
+    AudioSource playerAudio;
+    public AudioClip jumpSE;
+    public AudioClip deadSE;
 
     EbiGameController game;
     EbiHPController hp;
@@ -27,6 +30,7 @@ public class PlayerController : MonoBehaviour
         ground = false;
         walk = GetComponent<Animator>();
         dead = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
         transform.position = new Vector3(-2.2f, -2, 0);
 
         GameObject obj = GameObject.Find("GameController");
@@ -45,6 +49,7 @@ public class PlayerController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space) & ground & !gameOver)
                 {
                     rb.AddForce(Vector2.up * 300);
+                    playerAudio.PlayOneShot(jumpSE);
                 }
 
                 if (Input.GetKey(KeyCode.RightArrow) & !gameOver)
@@ -66,6 +71,7 @@ public class PlayerController : MonoBehaviour
 
                 if (transform.position.y < -4 & !gameOverJump)
                 {
+                    playerAudio.PlayOneShot(deadSE);
                     gameOverJumpForce = 400;
                     rb.velocity = Vector3.zero;
                     GameOverAction();
@@ -138,6 +144,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Car")
         {
+            playerAudio.PlayOneShot(deadSE);
             gameOverJumpForce = 250;
             rb.velocity = Vector3.zero;
             GameOverAction();
@@ -145,6 +152,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "BrokenCar")
         {
+            playerAudio.PlayOneShot(deadSE);
             gameOverJumpForce = 350;
             rb.velocity = Vector3.zero;
             GameOverAction();
@@ -152,6 +160,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "Dentyuu")
         {
+            playerAudio.PlayOneShot(deadSE);
             gameOverJumpForce = 300;
             rb.velocity = Vector3.zero;
             GameOverAction();
@@ -176,6 +185,5 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("EbiGameClear");
-        Debug.Log("Clear");
     }
 }

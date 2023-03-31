@@ -16,10 +16,15 @@ public class PuriousCar : MonoBehaviour
     public float x;
     public float y;
     public float z;
+
+    AudioSource priousCarAudio;
+    public AudioClip priousGo;
+    bool musicGo;
     void Start()
     {
         normal = purious.GetComponent<Animator>();
         fast = purious.GetComponent<Animator>();
+        priousCarAudio = purious.GetComponent<AudioSource>();
 
         GameObject obj = GameObject.Find("PuriousGoJudge");
         judge = obj.GetComponent<PuriousJudge>();
@@ -40,6 +45,12 @@ public class PuriousCar : MonoBehaviour
         {
             fast.SetBool("BlAccel", true);
             transform.position += new Vector3(11.75f, 0, 0) * Time.deltaTime;
+
+            if (!musicGo)
+            {
+                priousCarAudio.PlayOneShot(priousGo);
+                musicGo = true;
+            }
         }
 
         if (game.scene == 0)
@@ -48,6 +59,7 @@ public class PuriousCar : MonoBehaviour
             normal.SetBool("BlGo", false);
             fast.SetBool("BlAccel", false);
             go = false;
+            musicGo = false;
         }
     }
 
