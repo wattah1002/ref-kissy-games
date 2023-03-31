@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-// using UnityEngine.SceneManagement;
 
 public class SleepingController : MonoBehaviour
 {
@@ -21,9 +20,6 @@ public class SleepingController : MonoBehaviour
     RectTransform ExclPosition;
 
     public AudioSource sound_Zz;
-
-    // public GameObject ClearEffect;
-    // public GameObject EffectPoint;
     
     void Start()
     {
@@ -96,6 +92,22 @@ public class SleepingController : MonoBehaviour
                     sound_Zz.Pause();
                 }
             }
+        }
+        if(other.gameObject.tag == "Wall")
+        {
+            if(anim.GetBool("gameover"))//壁に当たったときに、もしゲームオーバー判定なら
+            {
+                this.gameObject.SetActive (false);
+                Debug.Log("GAMEOVER");
+                sound_Zz.Pause();
+            }
+            else//壁に当たったときに、ゲームオーバー判定でないならクリア
+            {
+                this.gameObject.SetActive (false);
+                Debug.Log("clear!!!");
+                sound_Zz.Pause();
+            }
+            
         }
     }
 }

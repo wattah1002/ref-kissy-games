@@ -8,14 +8,11 @@ public class RefuAnimation3 : StateMachineBehaviour
     SleepMeter sleepmeter;
     Animator refuanimator;
 
-    [SerializeField]GameObject RefuNoid;
+    GameObject RefuNoid;
     SleepingController sleepingcontroller;
 
-    public override void OnStateUpdate(Animator refuanimator, AnimatorStateInfo stateInfo, int layerIndex) 
+    public override void OnStateExit(Animator refuanimator, AnimatorStateInfo stateInfo, int layerIndex) 
     {
-        RefuNoid = GameObject.Find("refu_noid");
-        sleepingcontroller = RefuNoid.GetComponent<SleepingController>();
-
         sleepingmeter = GameObject.Find("SleepMeter");
         sleepmeter = sleepingmeter.GetComponent<SleepMeter>();
         float Nemusa = sleepmeter.SleepingBarometer;
@@ -30,6 +27,8 @@ public class RefuAnimation3 : StateMachineBehaviour
             refuanimator.SetBool("wake3",false);
         }
 
+        RefuNoid = GameObject.Find("refu_noid");
+        sleepingcontroller = RefuNoid.GetComponent<SleepingController>();
         if(sleepingcontroller.CleanHits <= 10)
         {
             sleepingcontroller.IsSleeping = true;
