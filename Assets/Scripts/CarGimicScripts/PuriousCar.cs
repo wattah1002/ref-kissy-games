@@ -24,7 +24,7 @@ public class PuriousCar : MonoBehaviour
     {
         normal = purious.GetComponent<Animator>();
         fast = purious.GetComponent<Animator>();
-        priousCarAudio = purious.GetComponent<AudioSource>();
+        priousCarAudio = GetComponent<AudioSource>();
 
         GameObject obj = GameObject.Find("PuriousGoJudge");
         judge = obj.GetComponent<PuriousJudge>();
