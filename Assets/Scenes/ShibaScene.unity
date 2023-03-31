@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4495834, g: 0.49965644, b: 0.5756662, a: 1}
+  m_IndirectSpecularColor: {r: 0.4495839, g: 0.49965733, b: 0.57566804, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: b93ca659ba17f4d4aaebd61249763f09, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -225,6 +225,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4bd32bb2eec584ca29564e31e1f17b93, type: 3}
       propertyPath: m_Name
       value: pisutatiokaradatuki
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4bd32bb2eec584ca29564e31e1f17b93, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bd32bb2eec584ca29564e31e1f17b93, type: 3}
@@ -611,6 +615,10 @@ PrefabInstance:
       value: machidama'amVanilla
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f045daf6664e848e4a6dc5f28e684c96, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f045daf6664e848e4a6dc5f28e684c96, type: 3}
       propertyPath: m_TagString
       value: vanilla
       objectReference: {fileID: 0}
@@ -995,6 +1003,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kissi-
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4a899b78219804e2b99a0deafdc43b67, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a899b78219804e2b99a0deafdc43b67, type: 3}
 --- !u!1001 &872791237
@@ -1064,6 +1076,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sakana.vox
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 82f65fa49ed944397813cafb2c3a7059, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 82f65fa49ed944397813cafb2c3a7059, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.2
@@ -1101,7 +1117,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fddd4ad2325164b5d812c9371d71de8b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bf1739dd025c3694e8e259206250263c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1267,6 +1283,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e286bb480cb164f0a82d2bbb7d55d3b3, type: 3}
       propertyPath: m_Name
       value: mozi2023
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e286bb480cb164f0a82d2bbb7d55d3b3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5021228346462164004, guid: e286bb480cb164f0a82d2bbb7d55d3b3, type: 3}
       propertyPath: m_LocalScale.x
@@ -2208,6 +2228,10 @@ PrefabInstance:
       value: machidama'amCocoa
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b8c8fa34df45b4820ba3f02f8e0472d1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b8c8fa34df45b4820ba3f02f8e0472d1, type: 3}
       propertyPath: m_TagString
       value: cocoa
       objectReference: {fileID: 0}
@@ -2279,6 +2303,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0aeaeb16edc814da286ed24ff81c9b8a, type: 3}
       propertyPath: m_Name
       value: rikisi
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0aeaeb16edc814da286ed24ff81c9b8a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0aeaeb16edc814da286ed24ff81c9b8a, type: 3}
