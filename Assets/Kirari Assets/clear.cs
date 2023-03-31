@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class clear : MonoBehaviour
 {
@@ -38,6 +39,11 @@ public class clear : MonoBehaviour
         else if (count == 4)
         {
             nextText.text = "ありがとう\nございました！";
+
+        }
+        else if (count == 5)
+        {
+            SceneManager.LoadScene("HomeScene");
 
         }
     }

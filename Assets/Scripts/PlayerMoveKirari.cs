@@ -12,6 +12,7 @@ public class PlayerMoveKirari : MonoBehaviour
     AudioSource audioSource;
     private Vector2 gravityCount;
     public Text gravityText;
+    public GameObject arrow;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class PlayerMoveKirari : MonoBehaviour
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
+            arrow.SetActive(true);
             transform.localScale = new Vector3(0.2f, 0.2f, 0.5f);
             transform.position += new Vector3(0.05f, 0, 0);
         }
