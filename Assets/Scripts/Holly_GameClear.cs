@@ -8,6 +8,9 @@ public class Holly_GameClear : MonoBehaviour
     public GameObject Refunoid;
     public GameObject ClearEffect;
     public GameObject EffectPoint;
+
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,17 +24,32 @@ public class Holly_GameClear : MonoBehaviour
     }
     void OnCollisionEnter(Collision other) 
     {
+        // if(other.gameObject.tag == "Wall")
+        // {
+        //     Debug.Log("clear!!!!!!!");
+        //     Instantiate(ClearEffect.gameObject, EffectPoint.transform.position, Quaternion.identity);
+        //     // StartCoroutine("HollyClear");
+        // }
         if(other.gameObject.tag == "Wall")
         {
-            Debug.Log("clear!!!!!!!");
-            Instantiate(ClearEffect.gameObject, EffectPoint.transform.position, Quaternion.identity);
-            StartCoroutine("HollyClear");
+            Debug.Log(1234567);
+            if(anim.GetBool("gameover"))//壁に当たったときに、もしゲームオーバー判定なら
+            {
+                Refunoid.gameObject.SetActive (false);
+                Debug.Log("GAMEOVER");
+            }
+            else//壁に当たったときに、ゲームオーバー判定でないならクリア
+            {
+                Refunoid.gameObject.SetActive (false);
+                Debug.Log("clear!!!");
+            }
+            
         }
     }
-    IEnumerator HollyClear()
-    {
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("HollyClear");
-        Refunoid.gameObject.SetActive (false);
-    }
+    // IEnumerator HollyClear()
+    // {
+    //     yield return new WaitForSeconds(3);
+    //     SceneManager.LoadScene("HollyClear");
+    //     Refunoid.gameObject.SetActive (false);
+    // }
 }
