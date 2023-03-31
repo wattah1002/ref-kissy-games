@@ -30,11 +30,11 @@ public class CameracController : MonoBehaviour
             Vector2 vewPos = Camera.main.WorldToScreenPoint(worldPos);
             if (vewPos.x > 1000)
             {
-                this.transform.position += new Vector3(0.01f, 0, 0);
+                this.transform.position += new Vector3(4.7f, 0, 0) * Time.deltaTime;
             }
             else if (vewPos.x < 500 & worldPos.x > -4)
             {
-                this.transform.position += new Vector3(-0.01f, 0, 0);
+                this.transform.position += new Vector3(-4.7f, 0, 0) * Time.deltaTime;
             }
         } else if (game.scene == 0)
         {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -50,13 +51,13 @@ public class PlayerController : MonoBehaviour
                 {
                     walk.SetBool("BlWalk", true);
                     transform.localScale = new Vector3(3, 3, 3);
-                    transform.position += new Vector3(0.01f, 0, 0);
+                    transform.position += new Vector3(4.7f, 0, 0) * Time.deltaTime;
                 }
                 else if (Input.GetKey(KeyCode.LeftArrow) & !gameOver)
                 {
                     walk.SetBool("BlWalk", true);
                     transform.localScale = new Vector3(-3, 3, 3);
-                    transform.position += new Vector3(-0.01f, 0, 0);
+                    transform.position += new Vector3(-4.7f, 0, 0) * Time.deltaTime;
                 }
                 else
                 {
@@ -80,6 +81,10 @@ public class PlayerController : MonoBehaviour
                     {
                         hp.hp -= 1;
                         hpDecrease = true;
+                        if (hp.hp < 1)
+                        {
+                            SceneManager.LoadScene("EbiGameOver");
+                        }
                     }
                 }
             }
@@ -89,12 +94,12 @@ public class PlayerController : MonoBehaviour
                 {
                     walk.SetBool("BlWalk", true);
                     transform.localScale = new Vector3(3, 3, 3);
-                    transform.position += new Vector3(0.003f, 0, 0);
+                    transform.position += new Vector3(1.41f, 0, 0) * Time.deltaTime;
                 }
                 else
                 {
                     playerSprite.enabled = false;
-                    clear = true;
+                    StartCoroutine("ClearWait");
                 }
             }
         }
@@ -165,5 +170,12 @@ public class PlayerController : MonoBehaviour
         dead.SetBool("BlDead", true);
         rb.AddForce(Vector2.up * gameOverJumpForce);
         gameOverJump = true;
+    }
+
+    IEnumerator ClearWait()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("EbiGameClear");
+        Debug.Log("Clear");
     }
 }

@@ -23,7 +23,7 @@ public class FallDentyuuGimic : MonoBehaviour
     {
         if (fall1 & transform.position.y > fallDirection)
         {
-            transform.position += new Vector3(0, -0.06f, 0);
+            transform.position += new Vector3(0, -28.2f, 0) * Time.deltaTime;
         }
 
         if (game.scene == 0)

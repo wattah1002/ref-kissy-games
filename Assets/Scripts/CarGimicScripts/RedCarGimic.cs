@@ -23,7 +23,7 @@ public class RedCarGimic : MonoBehaviour
     {
         if (go & transform.position.x > -20)
         {
-            transform.position += new Vector3(-0.025f, 0, 0);
+            transform.position += new Vector3(-11.75f, 0, 0) * Time.deltaTime;
             start.SetBool("BlGo", true);
         }
         else
