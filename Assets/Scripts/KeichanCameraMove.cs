@@ -11,12 +11,12 @@ public class KeichanCameraMove : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Cursor.lockState = CursorLockMode.None;
         float X_Rotation = Input.GetAxis("Mouse X");
         float Y_Rotation = Input.GetAxis("Mouse Y");
         float hor = cameraHor.eulerAngles.y;
@@ -32,6 +32,5 @@ public class KeichanCameraMove : MonoBehaviour
         }
         cameraHor.transform.Rotate(new Vector3(0, changeAngle, 0));
 
-        Cursor.lockState = CursorLockMode.Locked;
     }
 }
